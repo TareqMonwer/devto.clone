@@ -13,6 +13,7 @@
 + Commenting
 + Reaction on Articles
 + Popular Tags
++ Manage Badges for users
 
 
 ### URLS:
