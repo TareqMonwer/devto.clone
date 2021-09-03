@@ -1,34 +1,32 @@
 from django.http import HttpResponse
-from django.contrib.auth import (
-    authenticate, 
-    login as auth_login, 
-    logout
-)
+from django.contrib.auth import logout
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 
+from users.utils import (
+    get_data_from_post, 
+    validate_and_login_redirect
+)
+
 
 def registration(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-
+        form_data = get_data_from_post(
+            request, 
+            ['username', 'email', 'password']
+        )
         try:
             User.objects.create_user(
-                username, email, password
+                form_data['username'], 
+                form_data['email'], 
+                form_data['password']
             )
-            valid_user = authenticate(
-                request, 
-                username=username, 
-                password=password
+            return validate_and_login_redirect(
+                request,
+                form_data['username'],
+                form_data['password']
             )
-            if valid_user is not None:
-                auth_login(request, valid_user)
-                return redirect(reverse_lazy('articles:feed'))
-            else:
-                return HttpResponse('Login failed for given information.')
         except Exception as e:
             return HttpResponse(e)
     return render(request, 'users/registration.html')
@@ -36,19 +34,15 @@ def registration(request):
 
 def login(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        valid_user = authenticate(
-            request, 
-            username=username, 
-            password=password
+        form_data = get_data_from_post(
+            request,
+            ['username', 'password']
         )
-        if valid_user is not None:
-            auth_login(request, valid_user)
-            return redirect(reverse_lazy('articles:feed'))
-        else:
-            return HttpResponse('Login failed for given information.')
+        return validate_and_login_redirect(
+            request,
+            form_data['username'],
+            form_data['password']
+        )
     else:
         return render(request, 'users/login.html')
 
