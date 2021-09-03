@@ -50,3 +50,7 @@ def login(request):
 def logout_view(request):
     logout(request)
     return redirect(reverse_lazy('users:login'))
+
+
+def user_profile(request, username):
+    return render(request, 'users/profile.html')

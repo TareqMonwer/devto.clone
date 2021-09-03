@@ -26,3 +26,8 @@
 + /top/month :Top articles of the month
 + /latest :Latest top articles
 + /some-article-slug :Article detail page
+
+
+
+## Further Study Materials:
++ PEP-8
