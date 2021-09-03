@@ -32,8 +32,8 @@
         <div class="card">
           <div class="card-header">Login</div>
           <div class="card-body">
-            <form action="" method="">
-
+            <form action={% url 'users:login' %} method="POST">
+              {% csrf_token %}
               <div class="form-group row">
                 <label for="username" class="col-md-4 col-form-label text-md-right">Username</label>
                 <div class="col-md-6">

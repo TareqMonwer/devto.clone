@@ -1,5 +1,5 @@
 ## Features:
-+ Login/Registration
++ Login/Registration - Completed
 + User Profile
 + Publishing/Managing Articles
 + Articles Feed
