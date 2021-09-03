@@ -29,7 +29,7 @@
 ### URLS:
 + /login :login page
 + /registration :registration page
-+ /user/username :user profile
++ /users/username :user profile
 
 + / :Articles feed
 + /top/week :Top articles of the week
