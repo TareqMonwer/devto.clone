@@ -1,13 +1,15 @@
 from django.http import HttpResponse
 from django.contrib.auth import logout
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.urls import reverse_lazy
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 from users.utils import (
     get_data_from_post, 
     validate_and_login_redirect
 )
+
+User = get_user_model()
 
 
 def registration(request):
@@ -53,4 +55,6 @@ def logout_view(request):
 
 
 def user_profile(request, username):
-    return render(request, 'users/profile.html')
+    user_info = get_object_or_404(User, username=username)
+    context = {'user_info': user_info}
+    return render(request, 'users/profile.html', context)
