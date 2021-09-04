@@ -41,3 +41,4 @@
 
 ## Further Study Materials:
 + PEP-8
++ https://rsinger86.github.io/django-lifecycle/

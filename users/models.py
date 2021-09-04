@@ -20,6 +20,11 @@ class Profile(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
+    image = models.ImageField(
+        'Profile Picture',
+        upload_to='users/profile-pictures',
+        default='users/profile-pictures/default.png'
+    )
     bio = models.CharField(
         max_length=255,
         blank=True,
