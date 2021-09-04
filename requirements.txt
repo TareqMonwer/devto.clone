@@ -1,4 +1,9 @@
 asgiref==3.4.1
+autopep8==1.5.7
 Django==3.2.7
+django-lifecycle==0.9.1
+pycodestyle==2.7.0
 pytz==2021.1
 sqlparse==0.4.1
+toml==0.10.2
+urlman==2.0.1
