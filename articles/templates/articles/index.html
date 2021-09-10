@@ -1,5 +1,46 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<h1>Articles Feed</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Articles Feed</h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        {% for article in articles %} 
+            <div class="col-12">
+                <div class="card mb-3">
+                    <img src="https://via.placeholder.com/1200x300" 
+                    class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ article.title }}</h5>
+                        <p class="card-text">
+                            {{ article.content }}
+                        </p>
+                        <div class="card-text d-flex align-items-center">
+                            <small class="text-muted">
+                                {{ article.created_at }}
+                            </small>
+                            <div class="ml-3">
+                                {% for tag in article.tags_list %}
+                                    <small>
+                                        #{{ tag }}
+                                    </small>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="card p-4">
+                    <h3>Feed is Blank!</h3>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

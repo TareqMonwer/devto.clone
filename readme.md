@@ -10,9 +10,9 @@
 
 ## Features:
 + Login/Registration - Completed
-+ User Profile
-+ Publishing/Managing Articles
-+ Articles Feed
++ User Profile - Completed
++ Publishing/Managing Articles - Partial
++ Articles Feed - Partial
 + Save article to read later
 + Filtering for (Weekly, Monthly, Latest) Articles.
 
@@ -43,3 +43,5 @@
 + PEP-8
 + https://rsinger86.github.io/django-lifecycle/
 + https://github.com/wsvincent/awesome-django/
++ https://django-crispy-forms.readthedocs.io/
++ https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html

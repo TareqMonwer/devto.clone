@@ -64,6 +64,13 @@
                 <a class="nav-link" href={% url 'users:registration' %}>Register</a>
               {% endif %}
             </li>
+            {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'articles:publish_article' %}>
+                  Publish
+                </a>
+              </li>
+            {% endif %}
           </ul>
         </div>
       </div>
