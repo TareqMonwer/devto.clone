@@ -45,3 +45,12 @@
 + https://github.com/wsvincent/awesome-django/
 + https://django-crispy-forms.readthedocs.io/
 + https://simpleisbetterthancomplex.com/tutorial/2018/08/13/how-to-use-bootstrap-4-forms-with-django.html
++ DJANGO ADMIN CUSTOMIZATION: https://books.agiliq.com/projects/django-admin-cookbook/en/latest/
+
+
+# next:
+show user profile in card
+article detail page
+update article publishing system
+update tagging system
+update user profile to manage articles
