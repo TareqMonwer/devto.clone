@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Third party apps
     'crispy_forms',
+    'django_extensions',
 
     # Local apps
     'users.apps.UsersConfig',
