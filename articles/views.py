@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.urls import reverse_lazy
 from articles.forms import ArticleForm
@@ -27,3 +27,8 @@ def publish_article(request):
     else:
         context['form'] = ArticleForm
     return render(request, 'articles/publish.html', context)
+
+
+def article_detail(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    return render(request, 'articles/detail.html', {'article': article})

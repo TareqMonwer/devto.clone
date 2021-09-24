@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import reverse_lazy
 
 User = get_user_model()
 
@@ -24,4 +25,7 @@ class Article(models.Model):
     
     def tags_list(self):
         return self.tags.split(',')
+    
+    def get_absolute_url(self):
+        return reverse_lazy('articles:detail', args=[self.pk])
 

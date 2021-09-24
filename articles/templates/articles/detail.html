@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+{% block main %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card mb-3">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ article.title }}</h5>
+                    <p class="card-text">
+                        {{ article.content }}
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                        {{ article.updated_at|timesince }}
+                        </small>
+                        <span class="ml-3">
+                            {% for tag in article.tags_list %}
+                                <small>
+                                    #{{ tag }}
+                                </small>
+                            {% endfor %}
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

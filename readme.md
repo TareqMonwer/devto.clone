@@ -49,8 +49,19 @@
 
 
 # next:
-show user profile in card
-article detail page
+show user profile in card | done
+article detail page | done
 update article publishing system
 update tagging system
 update user profile to manage articles
+
+# next: <Date: 28th Sep 2021>
++ Social authentication
++ Password reset/change
++ Joining Email Sending
+
+# next: <Date: 1st Oct 2021>
++ Commenting
++ Reaction on Articles
++ Popular Tags
++ Manage Badges for users
