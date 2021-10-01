@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% include 'django_quill/media.html' %}
 
 {% block main %}
 <div class="container">
@@ -9,7 +10,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ article.title }}</h5>
                     <p class="card-text">
-                        {{ article.content }}
+                        {{ article.content.html|safe }}
                     </p>
                     <p class="card-text">
                         <small class="text-muted">

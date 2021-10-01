@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Third party apps
     'crispy_forms',
     'django_extensions',
+    'django_quill',
 
     # Local apps
     'users.apps.UsersConfig',
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': str(BASE_DIR / 'db.sqlite3'),
     }
 }
 

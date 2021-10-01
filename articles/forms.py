@@ -1,9 +1,10 @@
 from django import forms
-from django.forms import fields
 from articles.models import Article
+from django_quill.forms import QuillFormField
 
 
 class ArticleForm(forms.ModelForm):
+    content = QuillFormField()
     class Meta:
         model = Article
-        fields = ['title', 'content', 'tags']
+        fields = ['title', 'tags', 'content']

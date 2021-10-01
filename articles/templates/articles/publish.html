@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
+{% block styles %}
+<head>
+    {{ form.media }}
+</head>
+{% endblock %}
+
 {% block main %} 
 <div class="container">
     <h1>Publish Article</h1>

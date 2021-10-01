@@ -51,7 +51,7 @@
 # next:
 show user profile in card | done
 article detail page | done
-update article publishing system
+update article publishing system | 
 update tagging system
 update user profile to manage articles
 

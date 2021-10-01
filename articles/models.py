@@ -1,3 +1,4 @@
+from django_quill.fields import QuillField
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse_lazy
@@ -12,7 +13,7 @@ class Article(models.Model):
         related_name='articles'
     )
     title = models.CharField(max_length=255)
-    content = models.TextField()
+    content = QuillField()
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now_add=True)
     tags = models.CharField("Add comma seperated tags", max_length=255)

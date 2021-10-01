@@ -38,7 +38,7 @@
                         </div>
 
                         <p class="card-text">
-                            {{ article.content }}
+                            {{ article.content.html|safe }}
                         </p>
                         <div class="card-text d-flex align-items-center">
                             <small class="text-muted">
